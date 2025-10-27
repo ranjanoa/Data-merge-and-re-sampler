@@ -19,7 +19,7 @@ jobs:
         python-version: '3.10'
 
     - name: 3. Install Inno Setup
-      uses: crazy-max/ghaction-inno-setup@v3 # <-- THIS LINE IS THE FIX
+      uses: Kosta-Github/Inno-Setup-Action@v1 # <-- THIS IS THE CORRECT, CURRENT ACTION
 
     - name: 4. Install Python dependencies
       run: |
@@ -39,4 +39,5 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: merge-resample-service-installer
-        path: Output/Setup-MergeResampleService.exe # Inno Setup's default output dir is 'Output'
+        # Inno Setup's default output directory is a folder named 'Output'
+        path: Output/Setup-MergeResampleService.exe
